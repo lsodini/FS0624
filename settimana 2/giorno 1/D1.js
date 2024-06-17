@@ -23,7 +23,8 @@ undefined > è una keyword che indica che una variabile è stata dichiarata ma n
  Crea una variable chiamata "myName" e assegna ad essa il tuo nome, sotto forma di stringa.
 */
 
- const myName = "Luca"; 
+ const myName = "Luca";
+  console.log(myName); 
 
 /* ESERCIZIO 3
  Scrivi il codice necessario ad effettuare un addizione (una somma) dei numeri 12 e 20.
@@ -38,7 +39,8 @@ console.log(sum);
  Crea una variable di nome "x" e assegna ad essa il numero 12.
 */
 
- let x = 12
+ let x = 12;
+ console.log(x);
 
 /* ESERCIZIO 5
   Riassegna un nuovo valore alla variabile "myName" già esistente: il tuo cognome.
