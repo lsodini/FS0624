@@ -3,7 +3,7 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let a = 11;
+let a = 10;
 let b = 10;
 let verify = a > b ? "a è maggiore di b" : "b è maggiore di a";
 console.log(verify)
@@ -29,6 +29,9 @@ if (d % 5 === 0) {
   verify3 = "divisibile per 5"
 }
 console.log(verify3)
+else { 
+  verify3 = "non divisibile per 5"
+}
 
 /* ESERCIZIO 4
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
@@ -37,12 +40,12 @@ console.log(verify3)
 /* SCRIVI QUI LA TUA RISPOSTA */
 let e = 5;
 let f = 3;
-let verify4;
-if (e === 8 || f === 8 || e + f === 8 || e - f === 8) {
-  verify4 = "uno dei due numeri è 8 o la loro somma/sottrazione è 8"
+if (e === 8 || f === 8 || e + f === 8 || e - f === 8 || f - e === 8) {
+  console.log("uno dei due numeri è 8 o la loro somma/sottrazione è 8")
 }
-console.log(verify4)
-
+else {
+  console.log("nessuna delle condizioni è verificata")
+}
 /* ESERCIZIO 5
   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
   C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha diritto alla spedizione gratuita (altrimenti la spedizione ha un costo fisso pari a 10).
@@ -107,6 +110,10 @@ if (g >= h && g >= i) {
   }
 }
 console.log(max, mid, min)
+
+let arr = [10, 7, 9, 5, 8];
+arr.sort((a, b) => b - a);
+console.log(arr);
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
