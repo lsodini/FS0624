@@ -118,7 +118,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
-const femaleCharacters = [];
+const femaleCharacters = []; // questo caso è per avere l'array con solo i nomi scritto in html sulla pagina
 let counter = 0;
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === 'female') {
@@ -127,6 +127,13 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   }
 }
 document.getElementById("swfemale").innerText = femaleCharacters.join(", ")
+
+for (let i = 0; i < starWarsCharacters.length; i++) { // questo caso è per avere l'array con tutti i dati
+  if (starWarsCharacters[i].gender === 'female') {
+    femaleCharacters.push(starWarsCharacters[i])
+  }
+}
+console.log(femaleCharacters);
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
