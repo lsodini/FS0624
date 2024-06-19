@@ -141,7 +141,7 @@ const eyeColor = {
   yellow: [],
   brown: [],
   red: [],
-  blue_gray: []
+  'blue-gray': []
 }
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
@@ -162,11 +162,11 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
       eyeColor.red.push(starWarsCharacters[i].name)
       break
     case 'blue-gray':
-      eyeColor.blue_gray.push(starWarsCharacters[i].name)
+      eyeColor['blue-gray'].push(starWarsCharacters[i].name)
       break
   }
 }
-document.getElementById("sweye").innerHTML = "blu: " + eyeColor.blue.join("<br>") + "<br>" + "giallo: " + eyeColor.yellow.join("<br>") + "<br>" + "marrone: " + eyeColor.brown.join("<br>") + "<br>" + "rosso: " + eyeColor.red.join("<br>") + "<br>" +  "blu grigio: " + eyeColor.blue_gray.join("<br>")
+document.getElementById("sweye").innerHTML = "blu: " + eyeColor.blue.join("<br>") + "<br>" + "giallo: " + eyeColor.yellow.join("<br>") + "<br>" + "marrone: " + eyeColor.brown.join("<br>") + "<br>" + "rosso: " + eyeColor.red.join("<br>") + "<br>" +  "blu grigio: " + eyeColor['blue-gray'].join("<br>")
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
