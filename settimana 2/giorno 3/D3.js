@@ -119,11 +119,9 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
 const femaleCharacters = []; // questo caso è per avere l'array con solo i nomi scritto in html sulla pagina
-let counter = 0;
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === 'female') {
     femaleCharacters.push(starWarsCharacters[i].name)
-    counter++
   }
 }
 document.getElementById("swfemale").innerText = femaleCharacters.join(", ")
