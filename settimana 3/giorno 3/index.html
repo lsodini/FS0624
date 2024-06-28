@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+<div class="formBody">
+	<form id="myForm" onsubmit="event.preventDefault(); addTask();">
+		<h1>TO DO LIST</h1>
+			<label for="task"></label>
+		<input type="text" id="task" placeholder="Inserisci un nuovo task" class="required" required/>
+		<button id="btnTask" type="button" onclick="addTask()">Crea</button>
+	</form>
+	<script src="assets/js/script.js"></script>
+	<div id="taskList"></div>
+</div>
+</body>
+</html>

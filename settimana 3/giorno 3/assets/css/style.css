@@ -1,0 +1,74 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: blueviolet;
+}
+h1{
+	text-align: center;
+	color: blueviolet;
+	font-weight: 300;
+}
+.formBody{
+	position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	width: 60%;
+	padding: 0 0 30px 0;
+	border-radius: 10px;
+
+}
+#task:focus {
+    outline: none; /* Rimuove il bordo di focus */
+}
+#task::placeholder {
+	color: blueviolet; /* Cambia il colore del placeholder */
+}
+#task {
+	width: 80% ;
+	height: 30px;
+	margin: 0px 10px 0 20px;
+	padding: 0 0 0 5px;
+	border-radius: 5px;
+	border: 1px solid blueviolet;
+}
+button{
+	width: 100px;
+	height: 30px;
+	background-color: blueviolet;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+.taskItem {
+	width: 80%;
+	margin: 10px 20px 0 20px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid blueviolet;
+	
+	position: relative; /* Necessario per il posizionamento assoluto del pulsante */
+}
+.taskItem p {
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	vertical-align: middle;
+	 /* Larghezza ridotta per far posto al pulsante */
+}
+.taskItem p.completed {
+	text-decoration: line-through;
+}
+.deleteBtn {
+	background-color: blueviolet;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	position: absolute;
+	right: 10px; /* Posiziona il pulsante alla fine del div */
+	top: 50%;
+	transform: translateY(-50%); /* Centra verticalmente il pulsante */
+}
