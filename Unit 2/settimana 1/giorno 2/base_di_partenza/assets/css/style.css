@@ -131,6 +131,7 @@ section h2 {
   display: inline-block;
   position: relative;
   padding-bottom: 1rem; /* Aggiungi spazio sotto il testo per l'immagine */
+  white-space: nowrap; /* evita che il testo delimitato dallo span vada a capo */
 }
 
 .imgUnderline {
