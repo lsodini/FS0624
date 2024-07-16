@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>Agenzia di viaggi</title>
+
+    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
+
+In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
+
+Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
+
+
+Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
+
+Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
+Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
+
+Esercizi:
+
+1) Implementa una navbar con questi elementi di menu:
+Home
+Saldi
+Welcome Summer
+Last Minute
+Recensioni
+
+Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
+
+2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
+
+3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
+una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
+
+Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
+
+4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
+
+In questa sezione dovranno esserci:
+
+4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
+3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
+2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
+
+le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
+
+5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
+
+In questa sezione dovranno esserci:
+
+6 card per destinazioni per linea a schermo extra large
+3 card per destinazioni per linea a schermo grande (desktop)
+2 card per destinazioni per linea a schermo medio (tablet)
+2 card per destinazioni per linea a schermo piccolo (mobile)
+
+6) Implementa la sezione "Offerta del giorno". Qui avrai:
+
+66% dello spazio dedicato all'immagine del luogo di destinazione
+33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
+
+l'immagine avrà i bordi arrotondati e un'ombra leggera
+per il contenuto: il nome dovrà essere più grande del resto,
+le date dovranno essere formattate con font "monospace",
+il prezzo dovrà essere definito come "lead"
+e il badge sarà scuro
+
+
+7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
+
+8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
+
+9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
+
+10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
+Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
+
+11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
+
+
+
+EXTRAS
+
+12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
+
+13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
+
+14) Crea un modale con un campo email e un messaggio.
+
+15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
+
+16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
+
+17) Crea una funzione che rimuova tutte le "card" dalla pagina
+
+-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img
+                    src="data:image/png;base64,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"
+                    width="80" height="80"></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saldi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Welcome Summer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Last Minute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recensioni</a>
+                    </li>
+                </ul>
+                <form class="d-flex d-none d-lg-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno"
+                        aria-label="Search">
+                    <button class="btn btn-outline-danger" type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="bg-light p-4 rounded-2 text-lg-start text-center text-lg-start">
+            <h1 class="mb-2" style="color: rgba(0, 0, 0, 0.646);">Wanderlust Adventure</h1>
+            <hr>
+            <h2 class="mb-3" style="font-size: 1.5rem;color: rgba(0, 0, 0, 0.646);">Il miglior modo per scoprire il
+                mondo</h2>
+            <p class="fst-italic mb-4" style="font-size: 1rem;color: rgba(0, 0, 0, 0.646);">Scopri destinazioni
+                mozzafiato e offerte imperdibili per le tue prossime vacanze.</p>
+            <a href="#" class="btn fw-bold" style="background-color: #26bcea; color: white; border: none;">Prenota
+                ora</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-start mb-4">Saldi</h2>
+
+        <!-- Griglia di card responsive -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col d-md-none d-block d-md-block d-lg-block">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 4</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-start mb-4">Welcome Summer</h2>
+
+        <!-- Griglia di card responsive -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 4</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 5</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="destination-placeholder.jpg" class="card-img-top" alt="Destinazione 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Destinazione 6</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis eros,
+                            volutpat eget arcu eu, ullamcorper maximus eros.</p>
+                        <a href="#" class="btn fw-bold"
+                            style="background-color: #26bcea; color: white; border: none;">Prenota</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mt-5 d-none d-md-block d-lg-block">
+        <h2 class="text-center mb-4">Offerta del giorno</h2>
+
+        <div class="row gx-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card shadow-sm rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded-top"
+                        alt="Destinazione dell'offerta">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow-sm rounded">
+                    <div class="card-body">
+                        <h5 class="card-title display-4">Nome Destinazione</h5>
+                        <p class="card-text">
+                            <span class="badge bg-dark">Best Offer</span><br>
+                            <span class="text-monospace">Date</span><br>
+                            <span class="lead">Prezzo</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Last Minute</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 1">
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 2">
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 3">
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 4">
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 5">
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col">
+                <div class="card shadow rounded">
+                    <img src="destination-placeholder.jpg" class="card-img-top rounded"
+                        alt="Destinazione Last Minute 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Recensioni</h2>
+
+        <div class="row gx-5">
+            <div class="col-md-6 mb-4 w-100">
+                <div class="card border border-2 border-light">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="user-avatar.jpg" class="img-fluid rounded-start border border-2 border-light"
+                                alt="Immagine Utente">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Nome Utente</h5>
+                                <p class="card-text">Recensione dell'utente su un viaggio fantastico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="row gx-5">
+                <div class="col-md-6 mb-4 w-100">
+                    <div class="card border border-2 border-light">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="user-avatar.jpg" class="img-fluid rounded-start border border-2 border-light"
+                                    alt="Immagine Utente">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome Utente</h5>
+                                    <p class="card-text">Recensione dell'utente su un viaggio fantastico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5">
+            <div class="col-md-6 mb-4 w-100">
+                <div class="card border border-2 border-light">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="user-avatar.jpg" class="img-fluid rounded-start border border-2 border-light"
+                                alt="Immagine Utente">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Nome Utente</h5>
+                                <p class="card-text">Recensione dell'utente su un viaggio fantastico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <footer class="bg-dark text-center py-4 mt-5 " style="color:#26bcea">
+        <button type="button" class="btn btn-primary">Contattaci</button>
+        <p>© 2024 Wanderlust Adventure. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
