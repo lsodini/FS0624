@@ -1,0 +1,30 @@
+/* Navbar */
+.navbar {
+	background-color: #f8f9fa;
+	border-bottom: 1px solid #e9ecef;
+	padding: 0;
+}
+.navbar .dropdown-toggle img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+		.hero-section {
+			background-color: #7550FE; /* Colore di sfondo leggero per visibilità */
+			padding: 10px 10px 0 30px; /* Spazio intorno al contenuto */
+		}
+		.hero-content {
+			max-width: 50%; /* Limitare la larghezza del contenuto */
+			padding: 30px 80px;
+			color: white;
+		}
+		.hero-buttons {
+			display: flex;
+			gap: 10px; /* Spazio tra i bottoni */
+		}
+		.hero-image img {
+			max-width: 100%; /* Adatta l'immagine alla dimensione del contenitore */
+			height: auto;
+			width: 70%;
+		}
