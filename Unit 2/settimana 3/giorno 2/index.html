@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione e Contatore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            margin-right: 10px;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrazione</h1>
+        <div id="saved-name"></div>
+        <input type="text" id="name-input" placeholder="Inserisci il tuo nome">
+        <button id="save-btn">Salva</button>
+        <button id="remove-btn">Rimuovi</button>
+        <h2>Tempo trascorso: <span id="timer">0</span> secondi</h2>
+    </div>
+
+    <script>
+        // Funzione per aggiornare il nome salvato
+        function updateSavedName() {
+            const savedName = localStorage.getItem('name');
+            const savedNameDiv = document.getElementById('saved-name');
+            if (savedName) {
+                savedNameDiv.textContent = `Nome salvato: ${savedName}`;
+            } else {
+                savedNameDiv.textContent = '';
+            }
+        }
+
+        // Event listener per il pulsante di salvataggio
+        document.getElementById('save-btn').addEventListener('click', function() {
+            const name = document.getElementById('name-input').value;
+            if (name) {
+                localStorage.setItem('name', name);
+                updateSavedName();
+            }
+        });
+
+        // Event listener per il pulsante di rimozione
+        document.getElementById('remove-btn').addEventListener('click', function() {
+            localStorage.removeItem('name');
+            updateSavedName();
+        });
+
+        // Funzione per avviare il contatore
+        function startTimer() {
+            let timer = sessionStorage.getItem('timer') || 0;
+            timer = parseInt(timer);
+
+            setInterval(function() {
+                timer++;
+                sessionStorage.setItem('timer', timer);
+                document.getElementById('timer').textContent = timer;
+            }, 1000);
+        }
+
+        // Inizializza il nome salvato e il contatore
+        updateSavedName();
+        startTimer();
+    </script>
+</body>
+</html>
