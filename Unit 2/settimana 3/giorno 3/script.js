@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	  discardButton.onclick = () => card.remove();
 
 	  const buyButton = document.createElement('button');
-	  buyButton.className = 'btn btn-primary';
+	  buyButton.className = 'btn btn-success';
 	  buyButton.innerText = 'Compra ora';
 	  buyButton.onclick = () => addToCart(book);
 
